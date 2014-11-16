@@ -1,0 +1,16 @@
+{
+  "name": "synchro-prompt",
+  "version": "1.0.0",
+  "description": "ultra simple synchronous cli prompt using readline-sync with chalk coloring",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/test.js"
+  },
+  "author": "Joshua Kleckner <dev@lokua.net> (http://lokua.net/)",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "lodash": "^2.4.1",
+    "readline-sync": "^0.4.9"
+  }
+}

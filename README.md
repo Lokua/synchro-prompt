@@ -11,7 +11,7 @@ npm install synchro-prompt
 
 ## Usage
 
-#### prompt(<String|Array<String>>, [options])
+#### prompt(&lt;String|Array&lt;String&gt;&gt;, [options])
 
 ```js
 var prompt = require('synchro-prompt');

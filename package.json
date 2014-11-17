@@ -1,13 +1,34 @@
 {
   "name": "synchro-prompt",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "super simple synchronous cli prompt using readline-sync with chalk coloring",
   "main": "index.js",
   "scripts": {
     "test": "node ./test/test.js"
   },
-  "author": "Joshua Kleckner <dev@lokua.net> (http://lokua.net/)",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lokua/synchro-prompt.git"
+  },
+  "keywords": [
+    "sync",
+    "synchro",
+    "synchronous",
+    "cli",
+    "prompt"
+  ],
+  "author": {
+    "name": "Joshua Kleckner"
+  },
+  "email": "dev@lokua.net",
+  "website": "http://lokua.net",
+  "license": {
+    "type": "MIT",
+    "url": "http://lokua.net/license-mit.html"
+  },
+  "bugs": {
+    "url": "https://github.com/Lokua/synchro-prompt/issues"
+  },
   "dependencies": {
     "chalk": "^0.5.1",
     "readline-sync": "^0.4.9"

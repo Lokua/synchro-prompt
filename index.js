@@ -14,7 +14,7 @@ var _defaults = {
  * 
  * @param  {String|Array<String>} message the prompt message / question
  * @param  {Object} options [optional] {color: <string>, format: <boolean>, validate: <function>}
- * @return {String|Array<String>} user input string
+ * @return {String|Array<String>} user input string or array of strings depending on `message` type
  */
 module.exports = function(message, options) {
   options = options ? _.defaults(options, _defaults) : _defaults;

@@ -1,17 +1,22 @@
 var prompt = require('../index'),
     chalk = require('chalk');
 
-var answer = prompt('Enter value: ', {
+var options = {
   color: 'magenta',
   format: false,
   validate: function(input) {
-    if (isNaN(+input)) {
-      throw new Error(input + ' is not a number');
+    if (isNaN(+input)) { 
+      throw new Error(chalk.red(input + ' is not a number')); 
     }
   }
-});
+};  
 
-console.log(answer);
+var answer = prompt('Enter a number: ', options);
+console.log(chalk.green('You entered: ') + answer);
+console.log();
 
-var answers = prompt([0, 1, 2, 3]);
-console.log(answers);
+var answers = prompt(['1st', '2nd', '3rd'].map(function(n) {
+  return 'Enter ' + n + ' value: ';
+}));
+console.log(chalk.green('You entered: ') + answers);
+console.log();

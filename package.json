@@ -1,7 +1,7 @@
 {
   "name": "synchro-prompt",
   "version": "1.0.0",
-  "description": "ultra simple synchronous cli prompt using readline-sync with chalk coloring",
+  "description": "super simple synchronous cli prompt using readline-sync with chalk coloring",
   "main": "index.js",
   "scripts": {
     "test": "node ./test/test.js"

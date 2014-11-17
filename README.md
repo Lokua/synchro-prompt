@@ -36,5 +36,5 @@ answers instanceof Array; // true
 
 ## License
 
-MIT © [Joshua Kleckner](http://lokua.net)
+[lokua.net/license-mit](http://lokua.net/license-mit.html)
 

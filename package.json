@@ -1,6 +1,6 @@
 {
   "name": "synchro-prompt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "super simple synchronous cli prompt using readline-sync with chalk coloring",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^0.5.1",
-    "lodash": "^2.4.1",
     "readline-sync": "^0.4.9"
   }
 }

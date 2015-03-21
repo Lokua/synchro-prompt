@@ -3,35 +3,44 @@ var readlineSync = require('readline-sync'),
 
 var _defaults = {
   color: 'yellow',
-  format: true,
-  validate: function(input) { return input; }
+  transform: function(input) { return input; }
 };
 
-// stipped down version of underscore's _.defaults
-function defaults(dest, src) {
+var defaults = _defaults;
+
+module.exports = function(message, options) {
+
+  // reset to factory defaults
+  if (!arguments.length) {
+    defaults = _defaults;
+    return;
+  }
+
+  // override default options from here on out
+  var kind = typeof message;
+  if (kind !== 'string' && kind !== 'number' && !(message instanceof Array)) {
+    defaults = message;
+    return;
+  }
+
+  return prompt(message, options);
+};
+
+function merge(dest, src) {
   for (var prop in src) {
     if (dest[prop] === void 0) dest[prop] = src[prop];
   }
   return dest;
 };
 
-/**
- * Wrapper around [`readline-sync`](https://github.com/anseki/readline-sync) with 
- * [`chalk`](https://github.com/sindresorhus/chalk) coloring for synchronous cli prompting
- * 
- * @param  {String|Array<String>} message the prompt message / question
- * @param  {Object} options [optional] {color: <string>, format: <boolean>, validate: <function>}
- * @return {String|Array<String>} user input string or array of strings depending on `message` type
- */
-module.exports = function(message, options) {
-  options = options ? defaults(options, _defaults) : _defaults;
+function prompt(message, options) {
+  options = options ? merge(options, defaults) : defaults;
   if (message instanceof Array) {
+    console.log('...about to map...');
     return message.map(function(mess) { 
-      return module.exports(mess, options); 
+      return prompt(mess, options); 
     });
   }
   var input = readlineSync.question(chalk[options.color](message));
-  if (options.format) input = input.trim().toLowerCase();
-  options.validate(input);
-  return input;
-};
+  return options.transform(input);
+}

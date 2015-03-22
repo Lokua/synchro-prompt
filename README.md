@@ -20,8 +20,8 @@ answer; // HELLO!
 
 // or as an array
 var answers = prompt(['Name: ', 'Age: ']);
-// Name: Jane
-// Age: Doe
+// $ Name: Jane
+// $ Age: Doe
 answers instanceof Array; // true
 answers; // ['Jane', 'Doe']
 ```
@@ -56,7 +56,7 @@ prompt({
   } 
 });
 
-prompt('...'); // 1426910954458_something
+prompt('...'); // ie. 1426910954458_something
 
 // but you can still override a single call
 prompt('...', { transform: function(input) { return input; }});
